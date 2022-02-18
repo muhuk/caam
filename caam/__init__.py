@@ -19,6 +19,19 @@
 import bpy
 
 
+bl_info = {
+    "name": "caam",
+    "description": "Copy and Apply Mirror operator.",
+    "author": "Atamert Ölçgen",
+    "version": (0, 1),
+    "blender": (3, 0, 1),
+    "location": "Object menu",
+    "tracker_url": "https://github.com/muhuk/caam",
+    "support": "COMMUNITY",
+    "category": "Object"
+}
+
+
 def main(obj):
     modifier_name = None
     for m in obj.modifiers:
