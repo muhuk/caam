@@ -21,7 +21,7 @@ import bpy
 
 bl_info = {
     "name": "caam",
-    "description": "Copy and Apply Mirror operator.",
+    "description": "Copy and Apply Mirror Modifier operator.",
     "author": "Atamert Ölçgen",
     "version": (0, 1),
     "blender": (3, 0, 1),
@@ -48,11 +48,11 @@ def main(obj):
                 break
 
 
-class CopyAndApplyMirrorOperator(bpy.types.Operator):
+class CopyAndApplyMirrorModifierOperator(bpy.types.Operator):
     """Find the first mirror modifier, apply a copy of it and keep
        the original."""
-    bl_idname = "object.copy_and_apply_mirror_operator"
-    bl_label = "Copy and Apply Mirror Operator"
+    bl_idname = "object.caam"
+    bl_label = "Copy and Apply Mirror Modifier"
 
     @classmethod
     def poll(cls, context):
@@ -73,12 +73,12 @@ def menu_func(self, context):
 # Register and add to the "object" menu (required to also use
 # F3 search "Apply and Copy Mirror Operator" for quick access)
 def register():
-    bpy.utils.register_class(CopyAndApplyMirrorOperator)
+    bpy.utils.register_class(CopyAndApplyMirrorModifierOperator)
     bpy.types.VIEW3D_MT_object.append(menu_func)
 
 
 def unregister():
-    bpy.utils.unregister_class(CopyAndApplyMirrorOperator)
+    bpy.utils.unregister_class(CopyAndApplyMirrorModifierOperator)
     bpy.types.VIEW3D_MT_object.remove(menu_func)
 
 
